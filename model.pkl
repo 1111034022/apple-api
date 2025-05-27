@@ -1,2 +1,6 @@
-import joblib
-joblib.dump(model, 'model.pkl')
+import pickle
+
+# 訓練完的 model 儲存為 model.pkl
+with open('model.pkl', 'wb') as f:
+    pickle.dump(model, f)
+
