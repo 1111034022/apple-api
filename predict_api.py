@@ -1,13 +1,14 @@
 from flask import Flask, request, jsonify
 import numpy as np
 import cv2
-import joblib
+import pickle
 
 # 初始化 Flask App
 app = Flask(__name__)
 
-# 載入模型與等級設定
-model = joblib.load('model.pkl')  # 請確認 model.pkl 跟此 py 檔放在同一資料夾
+# 載入模型與等級設定（使用 pickle）
+with open('model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 GRADE_MAPPING = {
     0: 'U.S. Fancy',
