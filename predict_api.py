@@ -7,7 +7,7 @@ import pickle
 app = Flask(__name__)
 
 # 載入模型與等級設定（使用 pickle）
-with open('model.pkl', 'rb') as f:
+with open('model.pkl', 'wb') as f:
     model = pickle.load(f)
 
 GRADE_MAPPING = {
